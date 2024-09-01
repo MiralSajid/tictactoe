@@ -59,7 +59,7 @@ function Board() {
   });
 
   return (
-    <div className="grid">
+    <div className="background">
       {!winner && <p>Hey {currentPlayer}, its your turn</p>}
       {winner && winner !== "BOTH" && <p>Congratulations {winner}</p>}
       {winner && winner === "BOTH" && (
