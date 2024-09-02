@@ -17,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
+      <div className="bg-slate-200 h-12 flex gap-5 "></div>
     </html>
   );
 }

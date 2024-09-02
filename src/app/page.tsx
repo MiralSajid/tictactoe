@@ -14,6 +14,7 @@ export default function Home() {
       <main >
         <Board/>
         
+        
         </main>
       </div>
     

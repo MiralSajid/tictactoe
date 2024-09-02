@@ -1,4 +1,6 @@
 "use client";
+import React from "react";
+
 import { useEffect, useState } from "react";
 import Square from "../components/Square";
 type Player = "X" | "O" | "BOTH" | null;
@@ -60,7 +62,7 @@ function Board() {
 
   return (
     <div className="background">
-      {!winner && <p>Hey {currentPlayer}, its your turn</p>}
+      {!winner && <p className="text-lg font-medium " >Hey {currentPlayer}, its your turn</p>}
       {winner && winner !== "BOTH" && <p>Congratulations {winner}</p>}
       {winner && winner === "BOTH" && (
         <p>Congratulations youre both winners</p>
@@ -80,7 +82,7 @@ function Board() {
             );
           })}
       </div>
-      <button className="reset" onClick={reset}>
+      <button className="mt-8 text-base bg-[#b27de4] border-none rounded-lg p-4 cursor-pointer w-[120px] h-[80px]" onClick={reset}>
         RESET
       </button>
     </div>

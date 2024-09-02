@@ -3,61 +3,98 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-color: #6a4c93;
+  --secondary-color: #8ac6d1;
+  --background-color: #f0e6ef;
+  --text-color: #333333;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif;
 }
 
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
 .grid {
   display: grid;
-  grid-gap: 1px;
+  grid-gap: 10px;
   grid-template-columns: repeat(3, 1fr);
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .square {
-  width: 100px;
-  height: 100px;
-  font-size: 5rem;
-  color: #e8e5e5;
-  border: solid 1px black;
-  margin-right: 0;
-  margin-left: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.square:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.square_x {
+  color: #e63946;
+}
+
+.square_o {
+  color: #2a9d8f;
 }
 
 .reset {
   margin-top: 2rem;
-  margin-left: 2rem;
-
-  margin-right: 2rem;
-  font-size: 2rem;
-  background-color: rgb(148, 114, 170);
+  font-size: 1.5rem;
+  background-color: var(--secondary-color);
+  color: white;
   border: none;
   border-radius: 6px;
-  padding: 1rem;
+  padding: 0.75rem 2rem;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
-.background
-{
-  background-color: rgb(174, 144, 202);
-  display: grid;
-  grid-gap: 1px;
-  grid-template-columns: repeat(3, 1fr);
+
+.reset:hover {
+  background-color: #7ab8c5;
+  transform: translateY(-2px);
+}
+
+.background {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
 p {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.game-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.winner-message {
   font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
